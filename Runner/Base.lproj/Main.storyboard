@@ -99,7 +99,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <outlet property="myTabBar" destination="TYx-cC-ohO" id="4oE-TG-Vgw"/>
                         <outlet property="tabBar" destination="TYx-cC-ohO" id="JdD-CC-m2C"/>
                         <segue destination="zvU-cB-hZH" kind="relationship" relationship="viewControllers" id="5aZ-JU-y1k"/>
                         <segue destination="yHJ-NU-zEQ" kind="relationship" relationship="viewControllers" id="Dqm-lV-nEs"/>
