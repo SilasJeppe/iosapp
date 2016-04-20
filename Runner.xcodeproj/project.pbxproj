@@ -40,6 +40,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A9757371CC763C600BC40DC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3AD9BC2B1CC4C1E8007BEB77 /* MapViewController.swift */,
+				3A9757351CC6313000BC40DC /* TabBarController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3A9757381CC763D200BC40DC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		3AD9BC1D1CC4C1E7007BEB77 = {
 			isa = PBXGroup;
 			children = (
@@ -60,13 +76,13 @@
 		3AD9BC281CC4C1E8007BEB77 /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				3A9757381CC763D200BC40DC /* Models */,
 				3AD9BC291CC4C1E8007BEB77 /* AppDelegate.swift */,
-				3AD9BC2B1CC4C1E8007BEB77 /* MapViewController.swift */,
+				3A9757371CC763C600BC40DC /* Controllers */,
 				3AD9BC2D1CC4C1E8007BEB77 /* Main.storyboard */,
 				3AD9BC301CC4C1E8007BEB77 /* Assets.xcassets */,
 				3AD9BC321CC4C1E8007BEB77 /* LaunchScreen.storyboard */,
 				3AD9BC351CC4C1E8007BEB77 /* Info.plist */,
-				3A9757351CC6313000BC40DC /* TabBarController.swift */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
