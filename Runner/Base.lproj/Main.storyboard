@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--testView 1-->
@@ -43,10 +44,36 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController title="MapViewController" id="BYZ-38-t0r" customClass="MapViewController" customModule="Runner" customModuleProvider="target" sceneMemberID="viewController">
-                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="0fL-cw-gfI">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kax-PS-izG"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Bn-qj-dLL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uLY-My-xeY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </mapView>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VJa-PO-ebh">
+                                <rect key="frame" x="20" y="116" width="560" height="435"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfM-zQ-Yhq">
+                                <rect key="frame" x="270" y="72" width="60" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="starTracking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gS1-UO-4gC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VJa-PO-ebh" firstAttribute="leading" secondItem="uLY-My-xeY" secondAttribute="leadingMargin" id="DRN-JA-hv5"/>
+                            <constraint firstItem="6Bn-qj-dLL" firstAttribute="top" secondItem="VJa-PO-ebh" secondAttribute="bottom" id="I7z-2a-Pga"/>
+                            <constraint firstItem="wfM-zQ-Yhq" firstAttribute="top" secondItem="Kax-PS-izG" secondAttribute="bottom" constant="8" id="Q2L-TH-eKc"/>
+                            <constraint firstItem="VJa-PO-ebh" firstAttribute="top" secondItem="wfM-zQ-Yhq" secondAttribute="bottom" constant="8" id="dgw-IE-OAT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VJa-PO-ebh" secondAttribute="trailing" id="uWF-tK-uay"/>
+                            <constraint firstItem="wfM-zQ-Yhq" firstAttribute="centerX" secondItem="uLY-My-xeY" secondAttribute="centerX" id="vyh-5o-gtf"/>
+                        </constraints>
+                    </view>
                     <navigationItem key="navigationItem" title="Map" id="Eja-b1-0CT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
