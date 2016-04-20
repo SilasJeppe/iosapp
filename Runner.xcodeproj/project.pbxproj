@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A9757341CC61D2900BC40DC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9757331CC61D2900BC40DC /* MapKit.framework */; };
 		3A9757361CC6313000BC40DC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9757351CC6313000BC40DC /* TabBarController.swift */; };
+		3A97573A1CC78BA300BC40DC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9757391CC78BA300BC40DC /* DetailViewController.swift */; };
 		3AD9BC2A1CC4C1E8007BEB77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD9BC291CC4C1E8007BEB77 /* AppDelegate.swift */; };
 		3AD9BC2C1CC4C1E8007BEB77 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD9BC2B1CC4C1E8007BEB77 /* MapViewController.swift */; };
 		3AD9BC2F1CC4C1E8007BEB77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD9BC2D1CC4C1E8007BEB77 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		3A9757331CC61D2900BC40DC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3A9757351CC6313000BC40DC /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		3A9757391CC78BA300BC40DC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3AD9BC261CC4C1E8007BEB77 /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD9BC291CC4C1E8007BEB77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AD9BC2B1CC4C1E8007BEB77 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 		3A9757371CC763C600BC40DC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3A9757391CC78BA300BC40DC /* DetailViewController.swift */,
 				3AD9BC2B1CC4C1E8007BEB77 /* MapViewController.swift */,
 				3A9757351CC6313000BC40DC /* TabBarController.swift */,
 			);
@@ -162,6 +165,7 @@
 				3A9757361CC6313000BC40DC /* TabBarController.swift in Sources */,
 				3AD9BC2C1CC4C1E8007BEB77 /* MapViewController.swift in Sources */,
 				3AD9BC2A1CC4C1E8007BEB77 /* AppDelegate.swift in Sources */,
+				3A97573A1CC78BA300BC40DC /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -56,11 +56,18 @@
                                 <rect key="frame" x="20" y="116" width="560" height="435"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfM-zQ-Yhq">
-                                <rect key="frame" x="270" y="72" width="60" height="36"/>
+                                <rect key="frame" x="273" y="72" width="55" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Track!"/>
                                 <connections>
                                     <action selector="starTracking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gS1-UO-4gC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mc-k3-zqI">
+                                <rect key="frame" x="510" y="72" width="78" height="30"/>
+                                <state key="normal" title="Stop / Save"/>
+                                <connections>
+                                    <segue destination="2cm-Is-C8v" kind="show" identifier="SaveCoords" id="TbZ-OU-AwC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -70,15 +77,49 @@
                             <constraint firstItem="6Bn-qj-dLL" firstAttribute="top" secondItem="VJa-PO-ebh" secondAttribute="bottom" id="I7z-2a-Pga"/>
                             <constraint firstItem="wfM-zQ-Yhq" firstAttribute="top" secondItem="Kax-PS-izG" secondAttribute="bottom" constant="8" id="Q2L-TH-eKc"/>
                             <constraint firstItem="VJa-PO-ebh" firstAttribute="top" secondItem="wfM-zQ-Yhq" secondAttribute="bottom" constant="8" id="dgw-IE-OAT"/>
+                            <constraint firstItem="0mc-k3-zqI" firstAttribute="top" secondItem="Kax-PS-izG" secondAttribute="bottom" constant="8" id="jJP-Jl-epM"/>
+                            <constraint firstItem="0mc-k3-zqI" firstAttribute="trailing" secondItem="uLY-My-xeY" secondAttribute="trailingMargin" constant="8" id="mxM-Ai-1T2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VJa-PO-ebh" secondAttribute="trailing" id="uWF-tK-uay"/>
                             <constraint firstItem="wfM-zQ-Yhq" firstAttribute="centerX" secondItem="uLY-My-xeY" secondAttribute="centerX" id="vyh-5o-gtf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="Eja-b1-0CT"/>
+                    <connections>
+                        <outlet property="mapView" destination="VJa-PO-ebh" id="7FQ-PP-xCq"/>
+                        <outlet property="trackingButton" destination="wfM-zQ-Yhq" id="3rH-R8-oRT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3571" y="-532"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="rNu-sj-yaw">
+            <objects>
+                <tableViewController id="2cm-Is-C8v" customClass="DetailViewController" customModule="Runner" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="oid-YS-TRf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="ITr-6s-rel">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ITr-6s-rel" id="PeA-Ll-fru">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2cm-Is-C8v" id="hc6-3u-ptq"/>
+                            <outlet property="delegate" destination="2cm-Is-C8v" id="bIz-hm-aTd"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oD2-KV-vhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4241" y="-532"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="R5Q-UF-sH6">
