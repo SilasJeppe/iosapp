@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
+    //Outlets
     @IBOutlet var trackingButton: UIButton!
     @IBOutlet var mapView: MKMapView!
     
@@ -22,8 +23,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //Assign the viewController as the delegate of the mapView
         mapView.delegate = self
+        
+        //Request permanent auth to use location services
         locationManager.requestAlwaysAuthorization()
+        
+        //Tell the mapview to display user location
         mapView.showsUserLocation = true
     }
 
@@ -32,8 +39,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+        //Delegate func called whenever the system has updated the location of user
         var currentLatLng: (lat: Double, lng: Double)
         currentLatLng = (userLocation.coordinate.latitude, userLocation.coordinate.longitude)
         currentPoints.append(currentLatLng)
@@ -43,6 +50,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Identify the segue
         if segue.identifier == "SaveCoords" {
+            //"Grab" the destionation viewController and send over our data.
             let detailViewController = segue.destinationViewController as! DetailViewController
             detailViewController.itemStore = currentPoints
         }
@@ -50,8 +58,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBAction func starTracking(sender: AnyObject) {
         locationManager.startUpdatingLocation()
-        
     }
-
 }
 

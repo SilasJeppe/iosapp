@@ -12,6 +12,7 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //Set the default selected view in the tab bar
         self.selectedViewController = self.viewControllers![1]
     }
