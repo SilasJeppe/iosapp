@@ -10,6 +10,7 @@
 		3A0D32E01CCF5193004C76EE /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D32DF1CCF5193004C76EE /* Activity.swift */; };
 		3A0D32E21CCF5522004C76EE /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D32E11CCF5522004C76EE /* Route.swift */; };
 		3A0D32E41CCF55DE004C76EE /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D32E31CCF55DE004C76EE /* Point.swift */; };
+		3A0D32E61CCF612C004C76EE /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D32E51CCF612C004C76EE /* ActivitiesViewController.swift */; };
 		3A9757341CC61D2900BC40DC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9757331CC61D2900BC40DC /* MapKit.framework */; };
 		3A9757361CC6313000BC40DC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9757351CC6313000BC40DC /* TabBarController.swift */; };
 		3A97573A1CC78BA300BC40DC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9757391CC78BA300BC40DC /* DetailViewController.swift */; };
@@ -25,6 +26,7 @@
 		3A0D32DF1CCF5193004C76EE /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		3A0D32E11CCF5522004C76EE /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		3A0D32E31CCF55DE004C76EE /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		3A0D32E51CCF612C004C76EE /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		3A9757331CC61D2900BC40DC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3A9757351CC6313000BC40DC /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		3A9757391CC78BA300BC40DC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				3A9757391CC78BA300BC40DC /* DetailViewController.swift */,
 				3AD9BC2B1CC4C1E8007BEB77 /* MapViewController.swift */,
 				3A9757351CC6313000BC40DC /* TabBarController.swift */,
+				3A0D32E51CCF612C004C76EE /* ActivitiesViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				3A0D32E01CCF5193004C76EE /* Activity.swift in Sources */,
 				3A9757361CC6313000BC40DC /* TabBarController.swift in Sources */,
 				3AD9BC2C1CC4C1E8007BEB77 /* MapViewController.swift in Sources */,
+				3A0D32E61CCF612C004C76EE /* ActivitiesViewController.swift in Sources */,
 				3AD9BC2A1CC4C1E8007BEB77 /* AppDelegate.swift in Sources */,
 				3A97573C1CC8CF1C00BC40DC /* RunnerAPI.swift in Sources */,
 				3A0D32E21CCF5522004C76EE /* Route.swift in Sources */,

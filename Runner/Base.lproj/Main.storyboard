@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="2767" y="-532"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Activities View Controller-->
         <scene sceneID="EPw-m6-u9D">
             <objects>
-                <tableViewController id="fbH-qW-uye" sceneMemberID="viewController">
+                <tableViewController id="fbH-qW-uye" customClass="ActivitiesViewController" customModule="Runner" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="i86-wo-wVJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -6,4 +6,12 @@
 //  Copyright © 2016 rjuhl.dk. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ActivitiesViewController: UITableViewController {
+    
+    override func viewDidLoad() {
+        RunnerAPI.getAllActivities()
+    }
+    
+}
