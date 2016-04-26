@@ -19,7 +19,6 @@ class DetailViewController: UITableViewController {
         let item = itemStore[indexPath.row]
         cell.textLabel?.text = "Lat:\(item.lat), Lng:\(item.lng)"
         return cell
-        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
