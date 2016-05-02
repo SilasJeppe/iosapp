@@ -12,6 +12,15 @@ enum TypeToGet: String {
     case Activity = "/api/Activity"
 }
 
+enum ActivityResult {
+    case Success([Activity])
+    case Failure(ErrorType)
+}
+
+enum APIError:ErrorType {
+    case InvalidJsonData
+}
+
 let session: NSURLSession = {
     let config = NSURLSessionConfiguration.defaultSessionConfiguration()
     return NSURLSession(configuration: config)
@@ -40,8 +49,12 @@ struct RunnerAPI {
             (data, response, error) -> Void in
             
             if let jsonData = data {
-                if let jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding) {
-                    print(jsonString)
+                do {
+                    let jsonObject: AnyObject = try NSJSONSerialization.JSONObjectWithData(jsonData, options: [])
+                    print(jsonObject)
+                }
+                catch let error {
+                    print("Error fetching JSON object: \(error)")
                 }
             }
             else if let requestError = error {
@@ -52,5 +65,22 @@ struct RunnerAPI {
             }
         }
         task.resume()
+    }
+    
+    static func activitiesFromJSONData(data: NSData) -> ActivityResult {
+        do {
+            let jsonObject: AnyObject = try NSJSONSerialization.JSONObjectWithData(data, options: [])
+            guard let jsonDictionary = jsonObject as? [NSObject:AnyObject], activities = jsonDictionary["activities"] as? [String:AnyObject], activitiesArray = activities["activity"] as? [[String:AnyObject]] else {
+                
+                //The JSON structure deosn't match our expectations 
+                return .Failure(APIError.InvalidJsonData)
+            }
+            
+            var finalActivities = [Activity]()
+            return .Success(finalActivities)
+        }
+        catch let error {
+            return .Failure(error)
+        }
     }
 }
