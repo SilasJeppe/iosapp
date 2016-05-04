@@ -32,7 +32,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         //Request permanent auth to use location services
         locationManager.requestAlwaysAuthorization()
         
-        //Tell the mapview to display user location
+        //Tell the mapview to display user location. This triggers CoreLocation internally and makes didUpdateUserLocation fire.
         mapView.showsUserLocation = true
     }
 
