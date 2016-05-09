@@ -33,7 +33,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         locationManager.requestAlwaysAuthorization()
         
         //Tell the mapview to display user location. This triggers CoreLocation internally and makes didUpdateUserLocation fire.
-        mapView.showsUserLocation = true
+        //mapView.showsUserLocation = true
     }
 
     override func didReceiveMemoryWarning() {
