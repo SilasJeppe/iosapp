@@ -8,10 +8,9 @@
 
 import UIKit
 
-class ActivitiesViewController: UITableViewController {
+class ActivitiesViewController: UIViewController {
     
-    override func viewDidLoad() {
+    @IBAction func showActivities(sender: AnyObject) {
         RunnerAPI.getAllActivities()
     }
-    
 }
