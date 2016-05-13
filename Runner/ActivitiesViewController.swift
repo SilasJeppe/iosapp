@@ -11,6 +11,14 @@ import UIKit
 class ActivitiesViewController: UIViewController {
     
     @IBAction func showActivities(sender: AnyObject) {
-        RunnerAPI.getAllActivities()
+        //TODO: Write error-handling all the way down the chain so this doesn't crash
+        //      if API contact or parsing fails
+        
+        //Pass along completion handler clore to handle data when async json call finishes.
+        RunnerAPI.getAllActivities {
+            activities in
+            print(activities)
+            
+        }
     }
 }

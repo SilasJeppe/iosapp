@@ -10,5 +10,6 @@ import Foundation
 
 struct Point {
     let id: Int
-    let coordinates: (lat: Int, lng: Int)
+    let coordinates: (lat: Double, lng: Double)
+    let routeID: Int
 }

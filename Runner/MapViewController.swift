@@ -24,8 +24,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        print(RunnerAPI.getAllActivitiesURL())
-        
         //Assign the viewController as the delegate of the mapView
         mapView.delegate = self
         

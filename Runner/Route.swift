@@ -9,7 +9,9 @@
 import Foundation
 
 struct Route {
-    let id: Int
-    let activityID: Int
-    let pointList: [Point]
+    var id: Int
+    var activityID: Int
+    var pointList: [Point]
+    
+    //TODO: Write some proper inits so we don't have to var everything. See use of init in RunnerAPI
 }

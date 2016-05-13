@@ -26,61 +26,48 @@ let session: NSURLSession = {
     return NSURLSession(configuration: config)
 }()
 
-struct RunnerAPI {
+class RunnerAPI: NSObject, NSURLConnectionDelegate {
     
-    
-    private static let baseURLString = "https://eliten.azurewebsites.net"
-    
-    private static func runnerURL(typeToGet typeToGet: TypeToGet, parameters: [String:String]?) -> NSURL {
-        let path = typeToGet.rawValue
-        let components = NSURLComponents(string: baseURLString + path)
-        
-        return components!.URL!
-    }
-    
-    static func getAllActivitiesURL() -> NSURL {
-        return runnerURL(typeToGet: .Activity, parameters: nil)
-    }
-    
-    static func getAllActivities() {
-        let url = getAllActivitiesURL()
-        let request = NSURLRequest(URL: url)
+    static func getAllActivities(completionHandler: (allActivities: [Activity]) -> ()) {
+        var allActivities = [Activity]()
+        let url = NSURL(string: "https://eliten.azurewebsites.net/api/Activity")
+        let request = NSURLRequest(URL: url!)
         let task = session.dataTaskWithRequest(request) {
-            (data, response, error) -> Void in
+            (data, response,error) -> Void in
             
-            if let jsonData = data {
-                do {
-                    let jsonObject: AnyObject = try NSJSONSerialization.JSONObjectWithData(jsonData, options: [])
-                    print(jsonObject)
-                }
-                catch let error {
-                    print("Error fetching JSON object: \(error)")
+            do {
+                //Get a dictionary to work with from JSON
+                let result = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! [[String: AnyObject]]
+                for dictionary in result {
+                    //TODO: Fix these forced unwrappings. If let properties from dict?
+                    //TODO: Consider using SwiftyJSON?
+                    var activity = Activity(newId: (dictionary["ID"] as? Int)!)
+                    activity.userId = (dictionary["UserID"] as? Int)!
+                    activity.name = (dictionary["Name"] as? String)!
+                    activity.description = (dictionary["Description"] as? String)!
+                    activity.distance = (dictionary["Distance"] as? Double)!
+                    //This needs to read a string from the JSON and convert to NSDate. Just using current date for now
+                    activity.date = NSDate()
+                    //Same issue as above
+                    activity.time = 0.0
+                    activity.startAddress = (dictionary["StartAddress"] as? String)!
+                    activity.endAddress = (dictionary["EndAddress"] as? String)!
+                    //Notice the subscripting for accessing nested values
+                    activity.route.id = (dictionary["Route"]!["ID"] as? Int)!
+                    activity.route.activityID = (dictionary["Route"]!["ActivityID"] as? Int)!
+                    let pointListFromJSON = (dictionary["Route"]!["PointList"] as? NSArray)
+                    for point in pointListFromJSON! {
+                        let pointToAdd = Point(id: (point["ID"] as? Int)!, coordinates: (lat: (point["Coords"]!!["X"] as? Double)!, lng: (point["Coords"]!!["Y"] as? Double)!), routeID: (point["RouteID"] as? Int)!)
+                        activity.route.pointList.append(pointToAdd)
+                    }
+                    allActivities.append(activity)
+                    completionHandler(allActivities: allActivities)
                 }
             }
-            else if let requestError = error {
-                print("Error fetching activities: \(requestError)")
-            }
-            else {
-                print("Unexpected error")
+            catch let error {
+                print("(json error: \(error))")
             }
         }
         task.resume()
-    }
-    
-    static func activitiesFromJSONData(data: NSData) -> ActivityResult {
-        do {
-            let jsonObject: AnyObject = try NSJSONSerialization.JSONObjectWithData(data, options: [])
-            guard let jsonDictionary = jsonObject as? [NSObject:AnyObject], activities = jsonDictionary["activities"] as? [String:AnyObject], activitiesArray = activities["activity"] as? [[String:AnyObject]] else {
-                
-                //The JSON structure deosn't match our expectations 
-                return .Failure(APIError.InvalidJsonData)
-            }
-            
-            var finalActivities = [Activity]()
-            return .Success(finalActivities)
-        }
-        catch let error {
-            return .Failure(error)
-        }
     }
 }
