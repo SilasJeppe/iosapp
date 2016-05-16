@@ -61,8 +61,8 @@ class RunnerAPI: NSObject, NSURLConnectionDelegate {
                         activity.route.pointList.append(pointToAdd)
                     }
                     allActivities.append(activity)
-                    completionHandler(allActivities: allActivities)
                 }
+                completionHandler(allActivities: allActivities)
             }
             catch let error {
                 print("(json error: \(error))")

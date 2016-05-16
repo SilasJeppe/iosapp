@@ -16,12 +16,42 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="TAP-ad-kRl" kind="relationship" relationship="rootViewController" id="02S-ma-UkV"/>
+                        <segue destination="wsO-dq-JgO" kind="relationship" relationship="rootViewController" id="oQM-bP-jYl"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVf-aB-h30" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2767" y="-1196"/>
+            <point key="canvasLocation" x="2767" y="-1206"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="rEM-GM-xbM">
+            <objects>
+                <tableViewController id="wsO-dq-JgO" customClass="ActivitiesViewController" customModule="Runner" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DOL-Dw-YCh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Xa6-0o-aeV">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xa6-0o-aeV" id="xg0-EF-rc7">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wsO-dq-JgO" id="ev1-3W-GXU"/>
+                            <outlet property="delegate" destination="wsO-dq-JgO" id="wyR-8t-lMd"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="MvK-Km-U9O"/>
+                    <navigationItem key="navigationItem" id="8VV-dz-gXY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KTW-8R-1h0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3571" y="-1206"/>
         </scene>
         <!--Map-->
         <scene sceneID="1ms-jy-WU6">
@@ -39,49 +69,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qob-Wa-bUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2767" y="-532"/>
-        </scene>
-        <!--Activities View Controller-->
-        <scene sceneID="eZX-5f-agC">
-            <objects>
-                <viewController id="TAP-ad-kRl" customClass="ActivitiesViewController" customModule="Runner" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gGH-Vj-dMk"/>
-                        <viewControllerLayoutGuide type="bottom" id="clf-Fu-qX1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="MMh-Aw-Aav">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rBE-7m-lqv">
-                                <rect key="frame" x="20" y="64" width="560" height="487"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHD-Vj-oMR">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="showActivities:" destination="TAP-ad-kRl" eventType="touchUpInside" id="epY-4R-cbp"/>
-                                        </connections>
-                                    </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9cO-m9-Nr2">
-                                        <rect key="frame" x="0.0" y="30" width="560" height="457"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="clf-Fu-qX1" firstAttribute="top" secondItem="rBE-7m-lqv" secondAttribute="bottom" id="f28-GO-qbZ"/>
-                            <constraint firstItem="rBE-7m-lqv" firstAttribute="top" secondItem="gGH-Vj-dMk" secondAttribute="bottom" id="hgY-YD-Vlh"/>
-                            <constraint firstItem="rBE-7m-lqv" firstAttribute="leading" secondItem="MMh-Aw-Aav" secondAttribute="leadingMargin" id="yf6-9i-GfR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rBE-7m-lqv" secondAttribute="trailing" id="z32-gT-kKz"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="xS0-Jm-5lh"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rzW-GM-HX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3585" y="-1196"/>
         </scene>
         <!--MapViewController-->
         <scene sceneID="tne-QT-ifu">
