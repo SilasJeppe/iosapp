@@ -27,7 +27,7 @@ class ActivitiesViewController: UITableViewController {
     
     //These are regeuired for us to be a UITableViewController.
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("MyCell", forIndexPath: indexPath)
         cell.textLabel?.text = tableViewActivities[indexPath.row].name
         return cell
     }
@@ -35,4 +35,16 @@ class ActivitiesViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableViewActivities.count
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ActivityDetail" {
+            let selectedIndex = self.tableView.indexPathForCell(sender as! UITableViewCell)
+            let activityToSegue = tableViewActivities[(selectedIndex?.row)!]
+            let activityDetailViewController = segue.destinationViewController as! ActivityViewController
+            activityDetailViewController.currentActivity = activityToSegue
+            
+        }
+    }
+    
+    
 }
