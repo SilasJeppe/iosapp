@@ -59,7 +59,7 @@ class RunnerAPI: NSObject, NSURLConnectionDelegate {
                     let pointListFromJSON = (dictionary["Route"]!["PointList"] as? NSArray)
                     for point in pointListFromJSON! {
                         let id = (point["ID"] as? Int)!
-                        let coordinate = CLLocationCoordinate2D(latitude: (point["Coords"]!!["X"] as? Double)!, longitude: (point["Coords"]!!["Y"] as?Double)!)
+                        let coordinate = CLLocationCoordinate2D(latitude: (point["Coords"]!!["Y"] as? Double)!, longitude: (point["Coords"]!!["X"] as?Double)!)
                         let routeID = (point["RouteID"] as? Int)!
                         let pointToAdd = Point(id: id, coordinate: coordinate, routeID: routeID)
                         activity.route.pointList.append(pointToAdd)
