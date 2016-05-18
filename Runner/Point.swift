@@ -7,9 +7,16 @@
 //
 
 import Foundation
+import MapKit
 
-struct Point {
+class Point: NSObject, MKAnnotation {
     let id: Int
-    let coordinates: (lat: Double, lng: Double)
+    let coordinate: CLLocationCoordinate2D
     let routeID: Int
+    
+    init(id: Int, coordinate: CLLocationCoordinate2D, routeID: Int) {
+        self.id = id
+        self.coordinate = coordinate
+        self.routeID = routeID
+    }
 }
