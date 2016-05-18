@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 enum TypeToGet: String {
     case Activity = "/api/Activity"
@@ -57,7 +58,10 @@ class RunnerAPI: NSObject, NSURLConnectionDelegate {
                     activity.route.activityID = (dictionary["Route"]!["ActivityID"] as? Int)!
                     let pointListFromJSON = (dictionary["Route"]!["PointList"] as? NSArray)
                     for point in pointListFromJSON! {
-                        let pointToAdd = Point(id: (point["ID"] as? Int)!, coordinates: (lat: (point["Coords"]!!["X"] as? Double)!, lng: (point["Coords"]!!["Y"] as? Double)!), routeID: (point["RouteID"] as? Int)!)
+                        let id = (point["ID"] as? Int)!
+                        let coordinate = CLLocationCoordinate2D(latitude: (point["Coords"]!!["X"] as? Double)!, longitude: (point["Coords"]!!["Y"] as?Double)!)
+                        let routeID = (point["RouteID"] as? Int)!
+                        let pointToAdd = Point(id: id, coordinate: coordinate, routeID: routeID)
                         activity.route.pointList.append(pointToAdd)
                     }
                     allActivities.append(activity)
