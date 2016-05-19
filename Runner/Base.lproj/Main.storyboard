@@ -146,8 +146,31 @@
                     <view key="view" contentMode="scaleToFill" id="8iA-w1-9DT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="Elapsed Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRs-1z-qaJ">
+                                <rect key="frame" x="249" y="72" width="103" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9E-Rk-lqD">
+                                <rect key="frame" x="264" y="101" width="73" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qRs-1z-qaJ" firstAttribute="centerX" secondItem="8iA-w1-9DT" secondAttribute="centerX" id="5Tb-wX-M3E"/>
+                            <constraint firstItem="W9E-Rk-lqD" firstAttribute="top" secondItem="qRs-1z-qaJ" secondAttribute="bottom" constant="8" id="MY4-13-Swl"/>
+                            <constraint firstItem="qRs-1z-qaJ" firstAttribute="top" secondItem="bLe-6p-H2j" secondAttribute="bottom" constant="8" id="ZMg-Cd-iP9"/>
+                            <constraint firstItem="W9E-Rk-lqD" firstAttribute="centerX" secondItem="8iA-w1-9DT" secondAttribute="centerX" id="luM-5P-69l"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="displayTimeLabel" destination="W9E-Rk-lqD" id="RcD-zb-qog"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2qj-Oj-dtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
