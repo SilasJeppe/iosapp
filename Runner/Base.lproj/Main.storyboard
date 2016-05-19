@@ -135,6 +135,24 @@
             </objects>
             <point key="canvasLocation" x="4285" y="-1206"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="6aS-es-1I0">
+            <objects>
+                <viewController id="dtn-p4-F7I" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bLe-6p-H2j"/>
+                        <viewControllerLayoutGuide type="bottom" id="e95-J2-DR8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8iA-w1-9DT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2qj-Oj-dtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4285" y="-532"/>
+        </scene>
         <!--Map-->
         <scene sceneID="1ms-jy-WU6">
             <objects>
@@ -178,9 +196,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mc-k3-zqI">
                                 <rect key="frame" x="510" y="72" width="78" height="30"/>
                                 <state key="normal" title="Stop / Save"/>
-                                <connections>
-                                    <segue destination="2cm-Is-C8v" kind="show" identifier="SaveCoords" id="TbZ-OU-AwC"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -204,34 +219,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3571" y="-532"/>
-        </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="rNu-sj-yaw">
-            <objects>
-                <tableViewController id="2cm-Is-C8v" customClass="DetailViewController" customModule="Runner" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="oid-YS-TRf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="ITr-6s-rel">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ITr-6s-rel" id="PeA-Ll-fru">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="2cm-Is-C8v" id="hc6-3u-ptq"/>
-                            <outlet property="delegate" destination="2cm-Is-C8v" id="bIz-hm-aTd"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oD2-KV-vhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4241" y="-532"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="R5Q-UF-sH6">

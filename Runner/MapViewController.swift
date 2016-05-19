@@ -12,7 +12,13 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate {
     //Outlets
     @IBOutlet var trackingButton: UIButton!
-    @IBOutlet var mapView: MKMapView!
+    @IBOutlet var mapView: MKMapView! {
+        didSet{
+            //Assign the viewController as the delegate of the mapView
+            mapView.delegate = self
+            mapView.pitchEnabled = false
+        }
+    }
     
     //Array for holding the LatLngs currently being tracked
     var currentPoints:[(lat: Double, lng: Double)] = []
@@ -24,14 +30,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //Assign the viewController as the delegate of the mapView
-        mapView.delegate = self
-        
         //Request permanent auth to use location services
         locationManager.requestAlwaysAuthorization()
         
         //Tell the mapview to display user location. This triggers CoreLocation internally and makes didUpdateUserLocation fire.
-        //mapView.showsUserLocation = true
+        mapView.showsUserLocation = true
     }
 
     override func didReceiveMemoryWarning() {
