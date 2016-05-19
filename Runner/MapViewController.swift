@@ -52,10 +52,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Identify the segue
-        if segue.identifier == "SaveCoords" {
-            //"Grab" the destionation viewController and send over our data.
-            let detailViewController = segue.destinationViewController as! DetailViewController
-            detailViewController.itemStore = currentPoints
+//        if segue.identifier == "SaveCoords" {
+//            //"Grab" the destionation viewController and send over our data.
+//            let detailViewController = segue.destinationViewController as! DetailViewController
+//            detailViewController.itemStore = currentPoints
+//        }
+        if segue.identifier == "Stats" {
+            
         }
     }
     

@@ -135,10 +135,10 @@
             </objects>
             <point key="canvasLocation" x="4285" y="-1206"/>
         </scene>
-        <!--View Controller-->
+        <!--Stats View Controller-->
         <scene sceneID="6aS-es-1I0">
             <objects>
-                <viewController id="dtn-p4-F7I" sceneMemberID="viewController">
+                <viewController id="dtn-p4-F7I" customClass="StatsViewController" customModule="Runner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bLe-6p-H2j"/>
                         <viewControllerLayoutGuide type="bottom" id="e95-J2-DR8"/>
@@ -191,6 +191,7 @@
                                 <state key="normal" title="Track!"/>
                                 <connections>
                                     <action selector="starTracking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gS1-UO-4gC"/>
+                                    <segue destination="dtn-p4-F7I" kind="show" identifier="Stats" id="PGo-7v-X3w"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mc-k3-zqI">

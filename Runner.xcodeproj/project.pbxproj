@@ -21,6 +21,7 @@
 		3AD9BC2F1CC4C1E8007BEB77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD9BC2D1CC4C1E8007BEB77 /* Main.storyboard */; };
 		3AD9BC311CC4C1E8007BEB77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD9BC301CC4C1E8007BEB77 /* Assets.xcassets */; };
 		3AD9BC341CC4C1E8007BEB77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD9BC321CC4C1E8007BEB77 /* LaunchScreen.storyboard */; };
+		A7A7E4B31CEDB1A400042371 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A7E4B21CEDB1A400042371 /* StatsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		3AD9BC301CC4C1E8007BEB77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AD9BC331CC4C1E8007BEB77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AD9BC351CC4C1E8007BEB77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7A7E4B21CEDB1A400042371 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				3A9757351CC6313000BC40DC /* TabBarController.swift */,
 				3A0D32E51CCF612C004C76EE /* ActivitiesViewController.swift */,
 				3A5808931CE9E2380023E7D5 /* ActivityViewController.swift */,
+				A7A7E4B21CEDB1A400042371 /* StatsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A0D32E41CCF55DE004C76EE /* Point.swift in Sources */,
+				A7A7E4B31CEDB1A400042371 /* StatsViewController.swift in Sources */,
 				3A0D32E01CCF5193004C76EE /* Activity.swift in Sources */,
 				3A9757361CC6313000BC40DC /* TabBarController.swift in Sources */,
 				3A5808941CE9E2380023E7D5 /* ActivityViewController.swift in Sources */,
