@@ -31,7 +31,7 @@ class RunnerAPI: NSObject, NSURLConnectionDelegate {
     
     static func getAllActivities(completionHandler: (allActivities: [Activity]) -> ()) {
         var allActivities = [Activity]()
-        let url = NSURL(string: "https://eliten.azurewebsites.net/api/Activity")
+        let url = NSURL(string: "https://eliten2.azurewebsites.net/api/Activity")
         let request = NSURLRequest(URL: url!)
         let task = session.dataTaskWithRequest(request) {
             (data, response,error) -> Void in
