@@ -12,7 +12,13 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate {
     //Outlets
     @IBOutlet var trackingButton: UIButton!
-    @IBOutlet var mapView: MKMapView!
+    @IBOutlet var mapView: MKMapView! {
+        didSet{
+            //Assign the viewController as the delegate of the mapView
+            mapView.delegate = self
+            mapView.pitchEnabled = false
+        }
+    }
     
     //Array for holding the LatLngs currently being tracked
     var currentPoints:[(lat: Double, lng: Double)] = []
@@ -23,9 +29,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        //Assign the viewController as the delegate of the mapView
-        mapView.delegate = self
         
         //Request permanent auth to use location services
         locationManager.requestAlwaysAuthorization()
@@ -49,10 +52,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Identify the segue
-        if segue.identifier == "SaveCoords" {
-            //"Grab" the destionation viewController and send over our data.
-            let detailViewController = segue.destinationViewController as! DetailViewController
-            detailViewController.itemStore = currentPoints
+//        if segue.identifier == "SaveCoords" {
+//            //"Grab" the destionation viewController and send over our data.
+//            let detailViewController = segue.destinationViewController as! DetailViewController
+//            detailViewController.itemStore = currentPoints
+//        }
+        if segue.identifier == "Stats" {
+            
         }
     }
     

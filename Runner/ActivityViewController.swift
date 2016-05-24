@@ -11,7 +11,16 @@ import MapKit
 
 class ActivityViewController: UIViewController, MKMapViewDelegate {
     
-    @IBOutlet var mapView: MKMapView!
+    @IBOutlet weak var mapView: MKMapView! {
+        didSet {
+            mapView.delegate = self
+            mapView.mapType = .Standard
+            mapView.pitchEnabled = false
+            mapView.rotateEnabled = false
+            mapView.scrollEnabled = true
+            mapView.zoomEnabled = true
+        }
+    }
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var startAddressLabel: UILabel!
@@ -21,16 +30,12 @@ class ActivityViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.delegate = self
         nameLabel.text = currentActivity.name
         descriptionLabel.text = currentActivity.description
         startAddressLabel.text = currentActivity.startAddress
         endAddressLabel.text = currentActivity.endAddress
         
-        for point in currentActivity.route.pointList {
-            mapView.addAnnotation(point)
-        }
-        print(mapView.annotations)
+        updateView()
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
@@ -48,8 +53,12 @@ class ActivityViewController: UIViewController, MKMapViewDelegate {
         //Set annotation-specific properties **AFTER**
         //the view is dequeued or created...
         aView!.image = UIImage(named: "ThisFuckingGuy")
-        
         return aView
+    }
+    
+    func updateView() {
+        mapView.layoutMargins = UIEdgeInsets(top: 70, left: 70, bottom: 70, right: 70)
+        mapView.showAnnotations(currentActivity.route.pointList, animated: true)
     }
     
     
