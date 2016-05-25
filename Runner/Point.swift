@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class Point: NSObject, MKAnnotation {
+class Point: NSObject, MKOverlay {
     let id: Int
     let coordinate: CLLocationCoordinate2D
     let routeID: Int
@@ -19,4 +19,11 @@ class Point: NSObject, MKAnnotation {
         self.coordinate = coordinate
         self.routeID = routeID
     }
+    var boundingMapRect: MKMapRect {
+        get {
+            let upperLeft = MKMapPointForCoordinate(self.coordinate)
+            let bounds = MKMapRectMake(upperLeft.x, upperLeft.y, 2000, 2000)
+            return bounds
+        }
+    }    
 }

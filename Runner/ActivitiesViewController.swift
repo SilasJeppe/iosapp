@@ -20,7 +20,10 @@ class ActivitiesViewController: UITableViewController {
         RunnerAPI.getAllActivities {
             activities in
             self.tableViewActivities = activities
-            self.tableView.reloadData()
+            //Dispatch the reloadData call to the main (UI) thread so the tableView actually updates.
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tableView.reloadData()
+            })
         }
     }
     

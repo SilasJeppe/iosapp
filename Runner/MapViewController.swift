@@ -34,7 +34,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         locationManager.requestAlwaysAuthorization()
         
         //Tell the mapview to display user location. This triggers CoreLocation internally and makes didUpdateUserLocation fire.
-        //mapView.showsUserLocation = true
+        mapView.showsUserLocation = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +47,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var currentLatLng: (lat: Double, lng: Double)
         currentLatLng = (userLocation.coordinate.latitude, userLocation.coordinate.longitude)
         currentPoints.append(currentLatLng)
-        print(currentPoints)
+        print(userLocation.coordinate)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -64,6 +64,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBAction func starTracking(sender: AnyObject) {
         locationManager.startUpdatingLocation()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        mapView.showsUserLocation = false
     }
 }
 

@@ -52,7 +52,13 @@ class ActivityViewController: UIViewController, MKMapViewDelegate {
         }
         //Set annotation-specific properties **AFTER**
         //the view is dequeued or created...
-        aView!.image = UIImage(named: "ThisFuckingGuy")
+        let pinImage = UIImage(named: "Dot")
+        let size = CGSize(width: 50, height: 50)
+        UIGraphicsBeginImageContext(size)
+        pinImage!.drawInRect(CGRectMake(0, 0, size.width, size.height))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        aView?.image = resizedImage
         return aView
     }
     

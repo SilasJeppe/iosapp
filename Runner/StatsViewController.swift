@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreLocation
 
-class StatsViewController: UIViewController {
-    let currentActivity = Activity(newId: 0)
+class StatsViewController: UIViewController, CLLocationManagerDelegate {
+    var currentActivity = Activity(newId: 0)
+    var locationManager = CLLocationManager()
     
     @IBOutlet var displayTimeLabel: UILabel!
     var startTime = NSDate.timeIntervalSinceReferenceDate()
@@ -39,5 +41,14 @@ class StatsViewController: UIViewController {
     
     override func viewDidLoad() {
         timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(StatsViewController.updateTime), userInfo: nil, repeats: true)
+        
+        locationManager.startUpdatingLocation()
+        locationManager.delegate = self
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(locations)
+        let newPoint = Point(id: 0, coordinate: CLLocationCoordinate2D(latitude: (locations.last?.coordinate.latitude)!, longitude: (locations.last?.coordinate.longitude)!), routeID: currentActivity.route.id)
+        currentActivity.route.pointList.append(newPoint)
     }
 }
