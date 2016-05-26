@@ -17,10 +17,14 @@ class StatsViewController: UIViewController, CLLocationManagerDelegate {
     var startTime = NSDate.timeIntervalSinceReferenceDate()
     var timer = NSTimer()
     
+    
     func updateTime() {
+        //TODO: This is complicated. Reduce complexity by only counting seconds?
         let currentTime = NSDate.timeIntervalSinceReferenceDate()
         
         var elapsedTime: NSTimeInterval = currentTime - startTime
+        //Store elapsed time in activity every time it updates
+        currentActivity.time = elapsedTime
         
         let minutes = UInt8(elapsedTime / 60.0)
         
@@ -44,6 +48,7 @@ class StatsViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
+        
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
