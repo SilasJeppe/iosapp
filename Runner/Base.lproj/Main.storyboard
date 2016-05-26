@@ -160,10 +160,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEc-aX-937">
-                                <rect key="frame" x="277" y="513" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="253" y="513" width="95" height="30"/>
+                                <state key="normal" title="Stop Tracking"/>
                                 <connections>
-                                    <segue destination="R6G-Vu-JTl" kind="show" id="Oyd-qq-iJh"/>
+                                    <segue destination="R6G-Vu-JTl" kind="show" identifier="Result" id="Oyd-qq-iJh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -185,10 +185,10 @@
             </objects>
             <point key="canvasLocation" x="4285" y="-532"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="zgb-f6-DCe">
             <objects>
-                <viewController id="R6G-Vu-JTl" sceneMemberID="viewController">
+                <viewController id="R6G-Vu-JTl" customClass="ResultViewController" customModule="Runner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ga2-BO-Gsl"/>
                         <viewControllerLayoutGuide type="bottom" id="d3W-9n-bvJ"/>
