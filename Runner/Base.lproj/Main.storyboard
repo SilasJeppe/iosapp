@@ -196,7 +196,41 @@
                     <view key="view" contentMode="scaleToFill" id="37t-7J-20I">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCb-5g-8xK">
+                                <rect key="frame" x="20" y="72" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nhf-Il-2kX">
+                                <rect key="frame" x="20" y="101" width="25" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9kd-sK-K28">
+                                <rect key="frame" x="20" y="168" width="25" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ay-jx-0qa">
+                                <rect key="frame" x="20" y="139" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nhf-Il-2kX" firstAttribute="top" secondItem="RCb-5g-8xK" secondAttribute="bottom" constant="8" id="8cu-jf-qE8"/>
+                            <constraint firstItem="Nhf-Il-2kX" firstAttribute="leading" secondItem="37t-7J-20I" secondAttribute="leadingMargin" id="FTw-2l-pDu"/>
+                            <constraint firstItem="RCb-5g-8xK" firstAttribute="leading" secondItem="37t-7J-20I" secondAttribute="leadingMargin" id="OI4-BB-NDb"/>
+                            <constraint firstItem="9Ay-jx-0qa" firstAttribute="top" secondItem="Nhf-Il-2kX" secondAttribute="bottom" constant="8" id="Tge-pk-ZOB"/>
+                            <constraint firstItem="9Ay-jx-0qa" firstAttribute="leading" secondItem="37t-7J-20I" secondAttribute="leadingMargin" id="dQY-xw-jlT"/>
+                            <constraint firstItem="RCb-5g-8xK" firstAttribute="top" secondItem="ga2-BO-Gsl" secondAttribute="bottom" constant="8" id="eI3-DX-XSO"/>
+                            <constraint firstItem="9kd-sK-K28" firstAttribute="leading" secondItem="37t-7J-20I" secondAttribute="leadingMargin" id="fg2-d4-xUi"/>
+                            <constraint firstItem="9kd-sK-K28" firstAttribute="top" secondItem="9Ay-jx-0qa" secondAttribute="bottom" constant="8" id="igM-eL-XHa"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhr-up-o0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
