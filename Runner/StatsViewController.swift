@@ -56,4 +56,13 @@ class StatsViewController: UIViewController, CLLocationManagerDelegate {
         let newPoint = Point(id: 0, coordinate: CLLocationCoordinate2D(latitude: (locations.last?.coordinate.latitude)!, longitude: (locations.last?.coordinate.longitude)!), routeID: currentActivity.route.id)
         currentActivity.route.pointList.append(newPoint)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Result" {
+            timer.invalidate()
+            
+            let destinationViewController = segue.destinationViewController as! ResultViewController
+            destinationViewController.resultActivity = currentActivity
+        }
+    }
 }
