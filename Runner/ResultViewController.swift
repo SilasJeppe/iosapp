@@ -9,5 +9,11 @@
 import UIKit
 
 class ResultViewController: UIViewController {
+    var resultActivity = Activity(newId: 0)
     
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print(resultActivity)
+    }
 }
