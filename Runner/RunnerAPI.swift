@@ -31,7 +31,7 @@ class RunnerAPI: NSObject, NSURLConnectionDelegate {
     
     static func getAllActivities(completionHandler: (allActivities: [Activity]) -> ()) {
         var allActivities = [Activity]()
-        let url = NSURL(string: "https://eliten2.azurewebsites.net/api/Activity")
+        let url = NSURL(string: "https://eliten.azurewebsites.net/api/Activity")
         let request = NSURLRequest(URL: url!)
         let task = session.dataTaskWithRequest(request) {
             (data, response,error) -> Void in
@@ -49,7 +49,7 @@ class RunnerAPI: NSObject, NSURLConnectionDelegate {
                     activity.distance = (dictionary["Distance"] as? Double)!
                     //This needs to read a string from the JSON and convert to NSDate. Just using current date for now
                     activity.date = NSDate()
-                    //Same issue as above
+                    //Same issue as abovebrew
                     activity.time = 0.0
                     activity.startAddress = (dictionary["StartAddress"] as? String)!
                     activity.endAddress = (dictionary["EndAddress"] as? String)!

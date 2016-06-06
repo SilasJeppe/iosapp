@@ -16,6 +16,7 @@
 		3A9757361CC6313000BC40DC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9757351CC6313000BC40DC /* TabBarController.swift */; };
 		3A97573A1CC78BA300BC40DC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9757391CC78BA300BC40DC /* DetailViewController.swift */; };
 		3A97573C1CC8CF1C00BC40DC /* RunnerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97573B1CC8CF1C00BC40DC /* RunnerAPI.swift */; };
+		3AC272361CF7098B009F7189 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC272351CF7098B009F7189 /* ResultViewController.swift */; };
 		3AD9BC2A1CC4C1E8007BEB77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD9BC291CC4C1E8007BEB77 /* AppDelegate.swift */; };
 		3AD9BC2C1CC4C1E8007BEB77 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD9BC2B1CC4C1E8007BEB77 /* MapViewController.swift */; };
 		3AD9BC2F1CC4C1E8007BEB77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD9BC2D1CC4C1E8007BEB77 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		3A9757351CC6313000BC40DC /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		3A9757391CC78BA300BC40DC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3A97573B1CC8CF1C00BC40DC /* RunnerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunnerAPI.swift; sourceTree = "<group>"; };
+		3AC272351CF7098B009F7189 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		3AD9BC261CC4C1E8007BEB77 /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD9BC291CC4C1E8007BEB77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AD9BC2B1CC4C1E8007BEB77 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				3A5808931CE9E2380023E7D5 /* ActivityViewController.swift */,
 				A7A7E4B21CEDB1A400042371 /* StatsViewController.swift */,
 				A7F950581CF44D610029E5D3 /* UserViewController.swift */,
+				3AC272351CF7098B009F7189 /* ResultViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				3A97573C1CC8CF1C00BC40DC /* RunnerAPI.swift in Sources */,
 				3A0D32E21CCF5522004C76EE /* Route.swift in Sources */,
 				3A97573A1CC78BA300BC40DC /* DetailViewController.swift in Sources */,
+				3AC272361CF7098B009F7189 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
