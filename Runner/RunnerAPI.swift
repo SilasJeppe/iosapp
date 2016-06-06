@@ -74,4 +74,34 @@ class RunnerAPI: NSObject, NSURLConnectionDelegate {
         }
         task.resume()
     }
+    
+    static func getAllUsers() {
+        var allUsers = [User]()
+        let url = NSURL(string: "https://eliten.azurewebsites.net/api/User")
+        let request = NSURLRequest(URL: url!)
+        let task = session.dataTaskWithRequest(request) {
+            (data, response, error) -> Void in
+            
+            do {
+                let result = try
+                    NSJSONSerialization.JSONObjectWithData(data!, options: []) as! [[String: AnyObject]]
+                for dictionary in result {
+                    var user = User(id: (dictionary["ID"] as! Int))
+                    user.firstName = (dictionary["Firstname"] as! String)
+                    user.surName = (dictionary["Surname"] as! String)
+                    user.address = (dictionary["Address"] as! String)
+                    user.city = (dictionary["City"] as! String)
+                    user.zipCode = (dictionary["Zipcode"] as! String)
+                    user.phoneNumber = (dictionary["Phonenumber"] as! String)
+                    user.email = (dictionary["Email"] as! String)
+                    user.activities = (dictionary["ActivityList"] as! Array)
+                    allUsers.append(user)
+                }
+            }
+            catch let error {
+                print("(json error: \(error))")
+            }
+        }
+        task.resume()
+    }
 }

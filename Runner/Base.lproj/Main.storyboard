@@ -307,7 +307,6 @@
                         <outlet property="nameLabel" destination="yvn-bM-ySu" id="vkS-0r-XOH"/>
                         <outlet property="townLabel" destination="dLS-jn-cnV" id="KYx-5S-OYH"/>
                         <outlet property="userImage" destination="6rR-kP-llH" id="goD-ya-e4c"/>
-                        <outlet property="userName" destination="yvn-bM-ySu" id="SWb-1J-f0O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cj4-iK-EXi" userLabel="First Responder" sceneMemberID="firstResponder"/>
