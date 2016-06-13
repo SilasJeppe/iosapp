@@ -91,10 +91,9 @@ class RunnerAPI: NSObject, NSURLConnectionDelegate {
                     user.surName = (dictionary["Surname"] as! String)
                     user.address = (dictionary["Address"] as! String)
                     user.city = (dictionary["City"] as! String)
-                    user.zipCode = (dictionary["Zipcode"] as! String)
-                    user.phoneNumber = (dictionary["Phonenumber"] as! String)
+                    user.zipCode = (dictionary["ZipCode"] as! Int)
+                    user.phoneNumber = (dictionary["PhoneNumber"] as! Int)
                     user.email = (dictionary["Email"] as! String)
-                    user.activities = (dictionary["ActivityList"] as! Array)
                     allUsers.append(user)
                 }
                 completionHandler(allUsers: allUsers)

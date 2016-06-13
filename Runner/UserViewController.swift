@@ -19,6 +19,6 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nameLabel.text = currentUser.firstName + " " + currentUser.surName
-        townLabel.text = currentUser.city + "," + " " + currentUser.zipCode
+        townLabel.text = currentUser.city + "," + " " + String(currentUser.zipCode)
     }
 }

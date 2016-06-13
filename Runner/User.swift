@@ -14,14 +14,14 @@ struct User {
     var surName: String
     var address: String
     var city: String
-    var zipCode: String
-    var phoneNumber: String
+    var zipCode: Int
+    var phoneNumber: Int
     var email: String
     var password: String
     var activities: [Activity]
     
     
-    init(id: Int, firstName: String, surName: String, address: String, city: String, zipCode: String, phoneNumber: String, email: String, password: String) {
+    init(id: Int, firstName: String, surName: String, address: String, city: String, zipCode: Int, phoneNumber: Int, email: String, password: String) {
         self.id = id
         self.firstName = firstName
         self.surName = surName
@@ -35,6 +35,6 @@ struct User {
     }
     
     init(id: Int) {
-        self.init(id: id, firstName: "Kasper", surName: "Løkke", address: "Søndergade 62", city: "Aalborg", zipCode: "9000", phoneNumber: "40528283", email: "min_email@email.com", password: "hest")
+        self.init(id: id, firstName: "Kasper", surName: "Løkke", address: "Søndergade 62", city: "Aalborg", zipCode: 9000, phoneNumber: 40528283, email: "min_email@email.com", password: "hest")
     }
 }
