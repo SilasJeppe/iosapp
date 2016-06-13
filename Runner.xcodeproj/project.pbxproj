@@ -23,6 +23,7 @@
 		3AD9BC311CC4C1E8007BEB77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD9BC301CC4C1E8007BEB77 /* Assets.xcassets */; };
 		3AD9BC341CC4C1E8007BEB77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD9BC321CC4C1E8007BEB77 /* LaunchScreen.storyboard */; };
 		A714D9031CF5AD3E0040696E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A714D9021CF5AD3E0040696E /* User.swift */; };
+		A71655871D0F1998000BC735 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71655861D0F1998000BC735 /* FriendsViewController.swift */; };
 		A7A7E4B31CEDB1A400042371 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A7E4B21CEDB1A400042371 /* StatsViewController.swift */; };
 		A7F950591CF44D610029E5D3 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F950581CF44D610029E5D3 /* UserViewController.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		3AD9BC331CC4C1E8007BEB77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AD9BC351CC4C1E8007BEB77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A714D9021CF5AD3E0040696E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A71655861D0F1998000BC735 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		A7A7E4B21CEDB1A400042371 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		A7F950581CF44D610029E5D3 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 				A7A7E4B21CEDB1A400042371 /* StatsViewController.swift */,
 				A7F950581CF44D610029E5D3 /* UserViewController.swift */,
 				3AC272351CF7098B009F7189 /* ResultViewController.swift */,
+				A71655861D0F1998000BC735 /* FriendsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A714D9031CF5AD3E0040696E /* User.swift in Sources */,
+				A71655871D0F1998000BC735 /* FriendsViewController.swift in Sources */,
 				3A0D32E41CCF55DE004C76EE /* Point.swift in Sources */,
 				A7F950591CF44D610029E5D3 /* UserViewController.swift in Sources */,
 				A7A7E4B31CEDB1A400042371 /* StatsViewController.swift in Sources */,

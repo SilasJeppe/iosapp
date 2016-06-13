@@ -75,7 +75,7 @@ class RunnerAPI: NSObject, NSURLConnectionDelegate {
         task.resume()
     }
     
-    static func getAllUsers() {
+    static func getAllUsers(completionHandler: (allUsers: [User]) -> () ) {
         var allUsers = [User]()
         let url = NSURL(string: "https://eliten.azurewebsites.net/api/User")
         let request = NSURLRequest(URL: url!)
@@ -97,6 +97,7 @@ class RunnerAPI: NSObject, NSURLConnectionDelegate {
                     user.activities = (dictionary["ActivityList"] as! Array)
                     allUsers.append(user)
                 }
+                completionHandler(allUsers: allUsers)
             }
             catch let error {
                 print("(json error: \(error))")
