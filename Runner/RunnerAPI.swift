@@ -27,6 +27,22 @@ let session: NSURLSession = {
     return NSURLSession(configuration: config)
 }()
 
+func convertTime(timeSpan: String) -> NSTimeInterval {
+    
+    let time = (timeSpan as NSString).substringToIndex(8)
+    let timeItems = time.componentsSeparatedByString(":")
+    
+    let hoursInSeconds = Double(timeItems[0])! * 3600.00
+    let minutesInSeconds = Double(timeItems[1])! * 60.00
+    let seconds = Double(timeItems[2])!
+    
+    let result = hoursInSeconds + minutesInSeconds + seconds
+    
+    return result
+}
+
+
+
 class RunnerAPI: NSObject, NSURLConnectionDelegate {
     
     static func getAllActivities(completionHandler: (allActivities: [Activity]) -> ()) {
@@ -94,6 +110,40 @@ class RunnerAPI: NSObject, NSURLConnectionDelegate {
                     user.zipCode = (dictionary["ZipCode"] as! Int)
                     user.phoneNumber = (dictionary["PhoneNumber"] as! Int)
                     user.email = (dictionary["Email"] as! String)
+                    
+                    let activityArrayFromJSON = (dictionary["ActivityList"] as? NSArray)
+                    for activity in activityArrayFromJSON! {
+                        let id = (activity["ID"] as? Int)
+                        var activityToAdd = Activity(newId: id!)
+                        activityToAdd.name = (activity["Name"] as? String)!
+                        activityToAdd.description = (activity["Description"] as? String)!
+                        activityToAdd.distance = (activity["Distance"] as? Double)!
+                        let dateString = (activity["Date"] as? String)
+                        let dateFormatter = NSDateFormatter()
+                        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                        activityToAdd.date = dateFormatter.dateFromString(dateString!)!
+                        
+                        // TODO: Create method to take timespan from database, split it and convert it to NSTimeInterval
+                        let timeSpan = (activity["Time"] as? String)!
+                        activityToAdd.time = convertTime(timeSpan)
+                        
+                        activityToAdd.startAddress = (activity["StartAddress"] as? String)!
+                        activityToAdd.endAddress = (activity["EndAddress"] as? String)!
+                        
+                        activityToAdd.route.id = (activity["Route"]!!["ID"] as? Int)!
+                        activityToAdd.route.activityID = (activity["Route"]!!["ActivityID"] as? Int)!
+                        
+                        let pointListFromJSON = (activity["Route"]!!["PointList"] as? NSArray)
+                        for point in pointListFromJSON! {
+                            let id = (point["ID"] as? Int)!
+                            let coordinate = CLLocationCoordinate2D(latitude: (point["Coords"]!!["Y"] as? Double)!, longitude: (point["Coords"]!!["X"] as?Double)!)
+                            let routeID = (point["RouteID"] as? Int)!
+                            let pointToAdd = Point(id: id, coordinate: coordinate, routeID: routeID)
+                            activityToAdd.route.pointList.append(pointToAdd)
+                        }
+                        user.activities.append(activityToAdd)
+
+                    }
                     allUsers.append(user)
                 }
                 completionHandler(allUsers: allUsers)
