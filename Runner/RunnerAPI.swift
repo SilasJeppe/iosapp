@@ -63,10 +63,12 @@ class RunnerAPI: NSObject, NSURLConnectionDelegate {
                     activity.name = (dictionary["Name"] as? String)!
                     activity.description = (dictionary["Description"] as? String)!
                     activity.distance = (dictionary["Distance"] as? Double)!
-                    //This needs to read a string from the JSON and convert to NSDate. Just using current date for now
-                    activity.date = NSDate()
-                    //Same issue as abovebrew
-                    activity.time = 0.0
+                    let dateString = (dictionary["Date"] as? String)
+                    let dateFormatter = NSDateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                    activity.date = dateFormatter.dateFromString(dateString!)!
+                    let timeSpan = (dictionary["Time"] as? String)!
+                    activity.time = convertTime(timeSpan)
                     activity.startAddress = (dictionary["StartAddress"] as? String)!
                     activity.endAddress = (dictionary["EndAddress"] as? String)!
                     //Notice the subscripting for accessing nested values
@@ -122,17 +124,13 @@ class RunnerAPI: NSObject, NSURLConnectionDelegate {
                         let dateFormatter = NSDateFormatter()
                         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
                         activityToAdd.date = dateFormatter.dateFromString(dateString!)!
-                        
-                        // TODO: Create method to take timespan from database, split it and convert it to NSTimeInterval
                         let timeSpan = (activity["Time"] as? String)!
                         activityToAdd.time = convertTime(timeSpan)
-                        
                         activityToAdd.startAddress = (activity["StartAddress"] as? String)!
                         activityToAdd.endAddress = (activity["EndAddress"] as? String)!
                         
                         activityToAdd.route.id = (activity["Route"]!!["ID"] as? Int)!
                         activityToAdd.route.activityID = (activity["Route"]!!["ActivityID"] as? Int)!
-                        
                         let pointListFromJSON = (activity["Route"]!!["PointList"] as? NSArray)
                         for point in pointListFromJSON! {
                             let id = (point["ID"] as? Int)!
@@ -142,7 +140,6 @@ class RunnerAPI: NSObject, NSURLConnectionDelegate {
                             activityToAdd.route.pointList.append(pointToAdd)
                         }
                         user.activities.append(activityToAdd)
-
                     }
                     allUsers.append(user)
                 }
