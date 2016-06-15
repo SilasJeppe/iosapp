@@ -25,6 +25,7 @@
 		A714D9031CF5AD3E0040696E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A714D9021CF5AD3E0040696E /* User.swift */; };
 		A71655871D0F1998000BC735 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71655861D0F1998000BC735 /* FriendsViewController.swift */; };
 		A7A7E4B31CEDB1A400042371 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A7E4B21CEDB1A400042371 /* StatsViewController.swift */; };
+		A7F0525C1D114FBF007C1725 /* FriendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F0525B1D114FBF007C1725 /* FriendInfoViewController.swift */; };
 		A7F950591CF44D610029E5D3 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F950581CF44D610029E5D3 /* UserViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		A714D9021CF5AD3E0040696E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A71655861D0F1998000BC735 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		A7A7E4B21CEDB1A400042371 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		A7F0525B1D114FBF007C1725 /* FriendInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendInfoViewController.swift; sourceTree = "<group>"; };
 		A7F950581CF44D610029E5D3 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				3A9757391CC78BA300BC40DC /* DetailViewController.swift */,
+				A7F0525B1D114FBF007C1725 /* FriendInfoViewController.swift */,
 				3AD9BC2B1CC4C1E8007BEB77 /* MapViewController.swift */,
 				3A9757351CC6313000BC40DC /* TabBarController.swift */,
 				3A0D32E51CCF612C004C76EE /* ActivitiesViewController.swift */,
@@ -207,6 +210,7 @@
 				3A0D32E61CCF612C004C76EE /* ActivitiesViewController.swift in Sources */,
 				3AD9BC2A1CC4C1E8007BEB77 /* AppDelegate.swift in Sources */,
 				3A97573C1CC8CF1C00BC40DC /* RunnerAPI.swift in Sources */,
+				A7F0525C1D114FBF007C1725 /* FriendInfoViewController.swift in Sources */,
 				3A0D32E21CCF5522004C76EE /* Route.swift in Sources */,
 				3A97573A1CC78BA300BC40DC /* DetailViewController.swift in Sources */,
 				3AC272361CF7098B009F7189 /* ResultViewController.swift in Sources */,

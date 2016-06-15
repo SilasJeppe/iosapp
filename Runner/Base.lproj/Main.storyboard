@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Friends-->
+        <!--FriendsViewController-->
         <scene sceneID="FBN-Rn-r2I">
             <objects>
-                <tableViewController id="mjr-el-7O5" customClass="FriendsViewController" customModule="Runner" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="mjr-el-7O5" userLabel="FriendsViewController" customClass="FriendsViewController" customModule="Runner" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vJq-7M-lOw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,6 +22,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="GMJ-Jl-Kqh" kind="show" id="Bhe-v7-Rpw"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -33,7 +36,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACf-I4-mK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2771" y="-1954"/>
+            <point key="canvasLocation" x="2767" y="-1954"/>
         </scene>
         <!--Friends-->
         <scene sceneID="LbR-vM-Q9c">
@@ -51,6 +54,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XVf-aB-h30" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2767" y="-1206"/>
+        </scene>
+        <!--FriendInfoViewController-->
+        <scene sceneID="YX1-Gi-Fnh">
+            <objects>
+                <viewController id="GMJ-Jl-Kqh" userLabel="FriendInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0XZ-4K-SDL"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZSe-Ps-cu9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yPU-T9-DYp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LZn-mv-nnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3571" y="-1954"/>
         </scene>
         <!--Item-->
         <scene sceneID="rEM-GM-xbM">
@@ -399,7 +420,7 @@
                             <constraint firstItem="yvn-bM-ySu" firstAttribute="leading" secondItem="dLS-jn-cnV" secondAttribute="leading" id="yum-bs-gzt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ut7-5m-iZ1"/>
+                    <navigationItem key="navigationItem" title="Me" id="ut7-5m-iZ1"/>
                     <connections>
                         <outlet property="nameLabel" destination="yvn-bM-ySu" id="vkS-0r-XOH"/>
                         <outlet property="townLabel" destination="dLS-jn-cnV" id="KYx-5S-OYH"/>
