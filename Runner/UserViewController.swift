@@ -54,7 +54,7 @@ class UserViewController: UIViewController {
         }
         //Place users name, city and zipcode in labels
         nameLabel.text = currentUser.firstName + " " + currentUser.surName
-        townLabel.text = currentUser.city + "," + " " + String(currentUser.zipCode)
+        townLabel.text = currentUser.city + ", " + String(currentUser.zipCode)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
