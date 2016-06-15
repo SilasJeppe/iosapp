@@ -270,7 +270,7 @@
         <scene sceneID="1ms-jy-WU6">
             <objects>
                 <navigationController id="yHJ-NU-zEQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="EKS-rC-QOV"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="EKS-rC-QOV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="A33-NY-5wm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -433,5 +433,6 @@
     </scenes>
     <resources>
         <image name="Image" width="92" height="81"/>
+        <image name="MapIcon" width="49" height="33"/>
     </resources>
 </document>
