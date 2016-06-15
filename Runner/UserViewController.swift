@@ -50,10 +50,18 @@ class UserViewController: UIViewController {
                 
                 self.totalDistanceLabel.text = String(addDistance(self.myActivities)) + " KM"
                 self.totalTimeLabel.text = String(addTime(self.myActivities)) + " seconds"
-                })
+            })
         }
         //Place users name, city and zipcode in labels
         nameLabel.text = currentUser.firstName + " " + currentUser.surName
         townLabel.text = currentUser.city + "," + " " + String(currentUser.zipCode)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Activities" {
+            let activitiyListToSegue = myActivities
+            let activitiesViewController = segue.destinationViewController as! ActivitiesViewController
+            activitiesViewController.tableViewActivities = activitiyListToSegue
         }
+    }
 }
