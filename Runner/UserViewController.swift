@@ -46,10 +46,10 @@ class UserViewController: UIViewController {
             activities in self.myActivities = activities
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.latestDistanceLabel.text = String(self.myActivities.last!.distance) + " KM"
-                self.latestTimeLabel.text = String(self.myActivities.last!.time)
+                self.latestTimeLabel.text = String(self.myActivities.last!.time) + " seconds"
                 
                 self.totalDistanceLabel.text = String(addDistance(self.myActivities)) + " KM"
-                self.totalTimeLabel.text = String(addTime(self.myActivities))
+                self.totalTimeLabel.text = String(addTime(self.myActivities)) + " seconds"
                 })
         }
         //Place users name, city and zipcode in labels
