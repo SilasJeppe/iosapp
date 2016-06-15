@@ -39,7 +39,7 @@
         <scene sceneID="LbR-vM-Q9c">
             <objects>
                 <navigationController title="Friends" id="zvU-cB-hZH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" id="xRJ-Gk-QO3"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="Friends" id="xRJ-Gk-QO3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8sP-xb-Twg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -287,7 +287,7 @@
         <scene sceneID="90Q-Iv-Nq0">
             <objects>
                 <navigationController id="upc-Iq-k3Q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="User" id="SJy-hr-Ads"/>
+                    <tabBarItem key="tabBarItem" title="User" image="User" selectedImage="User" id="SJy-hr-Ads"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gsr-xi-aBm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -357,12 +357,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Image" highlightedImage="Image" translatesAutoresizingMaskIntoConstraints="NO" id="6rR-kP-llH">
-                                <rect key="frame" x="20" y="72" width="175" height="175"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="00n-Fc-g06"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cityLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLS-jn-cnV">
                                 <rect key="frame" x="203" y="226" width="180" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -386,6 +380,12 @@
                                     <segue destination="wsO-dq-JgO" kind="show" id="H8f-oj-Not"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Image" highlightedImage="Image" translatesAutoresizingMaskIntoConstraints="NO" id="6rR-kP-llH">
+                                <rect key="frame" x="20" y="72" width="175" height="175"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="00n-Fc-g06"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -432,6 +432,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Friends" width="25" height="25"/>
         <image name="Image" width="92" height="81"/>
+        <image name="User" width="25" height="25"/>
     </resources>
 </document>
