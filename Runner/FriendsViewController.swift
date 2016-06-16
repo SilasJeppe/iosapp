@@ -34,4 +34,13 @@ class FriendsViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableViewUsers.count
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "FriendInfo" {
+            let selectedIndex = self.tableView.indexPathForCell(sender as! UITableViewCell)
+            let friendToSegue = tableViewUsers[(selectedIndex?.row)!]
+            let friendInfoViewController = segue.destinationViewController as! FriendInfoViewController
+            friendInfoViewController.currentFriend = friendToSegue
+        }
+    }
 }

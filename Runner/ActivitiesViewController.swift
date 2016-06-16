@@ -17,14 +17,14 @@ class ActivitiesViewController: UITableViewController {
         tableView.delegate = self
         
         //This is called with a completion handler closure to handle the JSON calls being async.
-        RunnerAPI.getAllActivities {
-            activities in
-            self.tableViewActivities = activities
-            //Dispatch the reloadData call to the main (UI) thread so the tableView actually updates.
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.tableView.reloadData()
-            })
-        }
+//        RunnerAPI.getAllActivities {
+//            activities in
+//            self.tableViewActivities = activities
+//            //Dispatch the reloadData call to the main (UI) thread so the tableView actually updates.
+//            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                self.tableView.reloadData()
+//            })
+//        }
     }
     
     
