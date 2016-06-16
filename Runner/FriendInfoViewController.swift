@@ -40,13 +40,16 @@ class FriendInfoViewController: UIViewController, UITableViewDelegate, UITableVi
         return currentFriend.activities.count
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("FriendActivity", sender: indexPath)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ActivityDetail" {
-            let selectedIndex = self.activityTable.indexPathForCell(sender as! UITableViewCell)
-            let activityToSegue = currentFriend.activities[(selectedIndex?.row)!]
-            let activityDetailViewController = segue.destinationViewController as! ActivityViewController
-            activityDetailViewController.currentActivity = activityToSegue
-            
+        if segue.identifier == "FriendActivity" {
+            let row = (sender as! NSIndexPath).row
+            let friendActivityToSegue = currentFriend.activities[row]
+            let activityViewController = segue.destinationViewController as! ActivityViewController
+            activityViewController.currentActivity = friendActivityToSegue
         }
     }
 }

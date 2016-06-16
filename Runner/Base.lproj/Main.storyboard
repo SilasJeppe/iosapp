@@ -72,15 +72,15 @@
                                 <rect key="frame" x="0.0" y="255" width="600" height="296"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" id="SOV-AX-Kkr" userLabel="UserCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="UserCell" id="SOV-AX-Kkr" userLabel="UserCell">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SOV-AX-Kkr" id="Cwy-6X-sNj">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="68h-7l-4kK" kind="show" identifier="ActivityDetail" id="upm-9a-Iwo"/>
+                                            <segue destination="68h-7l-4kK" kind="show" identifier="FriendActivity" id="rFz-i1-4SZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -233,6 +233,7 @@
                             <constraint firstItem="3hR-kj-QAY" firstAttribute="centerX" secondItem="5ND-Ip-VkV" secondAttribute="centerX" id="x6w-Xj-VDK"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="PxI-Cp-1Z2"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="BZZ-nE-asU" id="KDl-Sb-538"/>
                         <outlet property="endAddressLabel" destination="3hR-kj-QAY" id="7Nh-dg-qrw"/>
@@ -591,6 +592,6 @@
         <image name="User" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="upm-9a-Iwo"/>
+        <segue reference="rFz-i1-4SZ"/>
     </inferredMetricsTieBreakers>
 </document>
