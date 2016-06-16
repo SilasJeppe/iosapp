@@ -61,6 +61,20 @@ class StatsViewController: UIViewController, CLLocationManagerDelegate {
         if segue.identifier == "Result" {
             timer.invalidate()
             
+            var distanceSum: Double = 0
+            for index in 0...(currentActivity.route.pointList.count - 2) {
+                let nextIndex = index + 1
+                let coordinate1: CLLocationCoordinate2D = currentActivity.route.pointList[index].coordinate
+                let coordinate2: CLLocationCoordinate2D = currentActivity.route.pointList[nextIndex].coordinate
+                let location1: CLLocation = CLLocation(latitude: coordinate1.latitude, longitude: coordinate1.longitude)
+                let location2: CLLocation = CLLocation(latitude: coordinate2.latitude, longitude: coordinate2.longitude)
+                
+                let thisDistance: CLLocationDistance = location1.distanceFromLocation(location2)
+                
+                distanceSum += thisDistance
+            }
+            currentActivity.distance = distanceSum
+            
             let destinationViewController = segue.destinationViewController as! ResultViewController
             destinationViewController.resultActivity = currentActivity
         }
